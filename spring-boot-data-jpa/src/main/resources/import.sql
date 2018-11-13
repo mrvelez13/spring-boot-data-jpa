@@ -104,3 +104,44 @@ INSERT INTO clientes(id,nombre,apellido,email,create_at,foto)VALUES(1369,'Sandra
 INSERT INTO clientes(id,nombre,apellido,email,create_at,foto)VALUES(1370,'Evelyn','Diaz','Diaz.Evelyn@gmail.com','2018-06-14','');
 INSERT INTO clientes(id,nombre,apellido,email,create_at,foto)VALUES(1677,'Juan','Hernandez','Hernandez.Juan@gmail.com','2018-06-14','');
 INSERT INTO clientes(id,nombre,apellido,email,create_at,foto)VALUES(1427,'David','Jaramillo','Jaramillo.David@gmail.com','2018-06-14','');
+
+/* Populate tabla productos */
+INSERT INTO productos (nombre, precio, create_at) VALUES('Panasonic Pantalla LCD', 259990, NOW());
+INSERT INTO productos (nombre, precio, create_at) VALUES('Sony Camara digital DSC-W320B', 123490, NOW());
+INSERT INTO productos (nombre, precio, create_at) VALUES('Apple iPod shuffle', 1499990, NOW());
+INSERT INTO productos (nombre, precio, create_at) VALUES('Sony Notebook Z110', 37990, NOW());
+INSERT INTO productos (nombre, precio, create_at) VALUES('Hewlett Packard Multifuncional F2280', 69990, NOW());
+INSERT INTO productos (nombre, precio, create_at) VALUES('Bianchi Bicicleta Aro 26', 69990, NOW());
+INSERT INTO productos (nombre, precio, create_at) VALUES('Mica Comoda 5 Cajones', 299990, NOW());
+
+/* Populate tabla facturas */
+INSERT INTO facturas(descripcion, observacion, cliente_id, create_at) VALUES ('Factura bicicleta', null, 1968, NOW());
+INSERT INTO detalle_facturas(cantidad, factura_id, producto_id) VALUES(1,1,1);
+INSERT INTO detalle_facturas(cantidad, factura_id, producto_id) VALUES(2,1,4);
+INSERT INTO detalle_facturas(cantidad, factura_id, producto_id) VALUES(1,1,4);
+INSERT INTO detalle_facturas(cantidad, factura_id, producto_id) VALUES(1,1,5);
+INSERT INTO detalle_facturas(cantidad, factura_id, producto_id) VALUES(2,1,7);
+
+INSERT INTO facturas(descripcion, observacion, cliente_id, create_at) VALUES ('Factura equipos de sonido', null, 1674, NOW());
+INSERT INTO detalle_facturas(cantidad, factura_id, producto_id) VALUES(3,2,6);
+
+
+INSERT INTO facturas(descripcion, observacion, cliente_id, create_at) VALUES ('Factura equipos de construccion', null, 1516, NOW());
+INSERT INTO detalle_facturas(cantidad, factura_id, producto_id) VALUES(1,3,5);
+INSERT INTO detalle_facturas(cantidad, factura_id, producto_id) VALUES(2,3,7);
+
+
+
+INSERT INTO facturas(descripcion, observacion, cliente_id, create_at) VALUES ('Factura equipos deportivos', null, 1330, NOW());
+INSERT INTO detalle_facturas(cantidad, factura_id, producto_id) VALUES(1,4,1);
+INSERT INTO detalle_facturas(cantidad, factura_id, producto_id) VALUES(2,4,4);
+
+INSERT INTO facturas(descripcion, observacion, cliente_id, create_at) VALUES ('Factura equipos de computo', null, 1657, NOW());
+INSERT INTO detalle_facturas(cantidad, factura_id, producto_id) VALUES(2,5,7);
+
+INSERT INTO users(username, password, enabled) VALUES('jonathan', '$2a$10$QLRFOf5/SnN2GXaEJyab/OoEqiOkTGWFn2Qr.zgGpoTSiS.zRQESW', 1);
+INSERT INTO users(username, password, enabled) VALUES('admin', '$2a$10$oP6FqAQzo3CYXVdDqvyiH.arvifwaWK2FW6CpP/Wp6SLeJLbYKS4q', 1);
+
+INSERT INTO authorities(user_id, authority) VALUES (1, 'ROLE_USER');
+INSERT INTO authorities(user_id, authority) VALUES (2, 'ROLE_USER');
+INSERT INTO authorities(user_id, authority) VALUES (2, 'ROLE_ADMIN');
